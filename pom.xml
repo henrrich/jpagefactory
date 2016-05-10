@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.henrrich</groupId>
+    <artifactId>jLocator</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <properties>
+        <selenium.server.version>2.53.0</selenium.server.version>
+        <jprotractor.version>1.0.1</jprotractor.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.jprotractor</groupId>
+            <artifactId>jprotractor</artifactId>
+            <version>${jprotractor.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>selenium-server</artifactId>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-support</artifactId>
+            <version>${selenium.server.version}</version>
+        </dependency>
+    </dependencies>
+
+
+</project>

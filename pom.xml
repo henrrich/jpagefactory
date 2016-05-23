@@ -30,6 +30,18 @@
             <artifactId>selenium-support</artifactId>
             <version>${selenium.server.version}</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-firefox-driver</artifactId>
+            <version>2.50.1</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
 

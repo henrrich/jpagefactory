@@ -1,8 +1,8 @@
-package org.henrrich.jlocator.example.supercalculator;
+package org.henrrich.jpagefactory.example.supercalculator;
 
-import org.henrrich.jlocator.How;
-import org.henrrich.jlocator.annotations.FindAll;
-import org.henrrich.jlocator.annotations.FindBy;
+import org.henrrich.jpagefactory.How;
+import org.henrrich.jpagefactory.annotations.FindAll;
+import org.henrrich.jpagefactory.annotations.FindBy;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;

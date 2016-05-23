@@ -1,9 +1,9 @@
-package org.henrrich.jlocator.example.supercalculator;
+package org.henrrich.jpagefactory.example.supercalculator;
 
 import com.jprotractor.NgWebDriver;
-import org.henrrich.jlocator.Channel;
-import org.henrrich.jlocator.JLocatorElementLocatorFactory;
-import org.henrrich.jlocator.JLocatorFieldDecorator;
+import org.henrrich.jpagefactory.Channel;
+import org.henrrich.jpagefactory.JPageFactoryElementLocatorFactory;
+import org.henrrich.jpagefactory.JPageFactoryFieldDecorator;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -30,7 +30,7 @@ public class SuperCalculatorTest {
         ngDriver.navigate().to(baseUrl);
         ngDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         superCalculatorPage = new SuperCalculatorPage();
-        PageFactory.initElements(new JLocatorFieldDecorator(new JLocatorElementLocatorFactory(ngDriver, Channel.WEB)), superCalculatorPage);
+        PageFactory.initElements(new JPageFactoryFieldDecorator(new JPageFactoryElementLocatorFactory(ngDriver, Channel.WEB)), superCalculatorPage);
     }
 
     @Test

@@ -1,4 +1,4 @@
-package org.henrrich.jlocator.annotations;
+package org.henrrich.jpagefactory.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

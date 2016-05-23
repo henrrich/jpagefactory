@@ -1,8 +1,8 @@
-package org.henrrich.jlocator;
+package org.henrrich.jpagefactory;
 
-import org.henrrich.jlocator.annotations.FindAll;
-import org.henrrich.jlocator.annotations.FindBy;
-import org.henrrich.jlocator.annotations.FindBys;
+import org.henrrich.jpagefactory.annotations.FindAll;
+import org.henrrich.jpagefactory.annotations.FindBy;
+import org.henrrich.jpagefactory.annotations.FindBys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.pagefactory.DefaultFieldDecorator;
 import org.openqa.selenium.support.pagefactory.ElementLocatorFactory;
@@ -15,9 +15,9 @@ import java.util.List;
 /**
  * Created by henrrich on 11/05/2016.
  */
-public class JLocatorFieldDecorator extends DefaultFieldDecorator {
+public class JPageFactoryFieldDecorator extends DefaultFieldDecorator {
 
-    public JLocatorFieldDecorator(ElementLocatorFactory factory) {
+    public JPageFactoryFieldDecorator(ElementLocatorFactory factory) {
         super(factory);
     }
 

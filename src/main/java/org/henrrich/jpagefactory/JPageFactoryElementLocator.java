@@ -1,4 +1,4 @@
-package org.henrrich.jlocator;
+package org.henrrich.jpagefactory;
 
 import com.jprotractor.NgWebElement;
 import org.openqa.selenium.SearchContext;
@@ -12,13 +12,13 @@ import java.util.List;
 /**
  * Created by henrrich on 21/04/2016.
  */
-public class JLocatorElementLocator extends DefaultElementLocator {
+public class JPageFactoryElementLocator extends DefaultElementLocator {
 
-    public JLocatorElementLocator(SearchContext searchContext, Field field) {
+    public JPageFactoryElementLocator(SearchContext searchContext, Field field) {
         super(searchContext, field);
     }
 
-    public JLocatorElementLocator(SearchContext searchContext, AbstractAnnotations annotations) {
+    public JPageFactoryElementLocator(SearchContext searchContext, AbstractAnnotations annotations) {
         super(searchContext, annotations);
     }
 

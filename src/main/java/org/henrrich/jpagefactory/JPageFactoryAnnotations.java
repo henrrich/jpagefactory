@@ -1,9 +1,9 @@
-package org.henrrich.jlocator;
+package org.henrrich.jpagefactory;
 
 import com.jprotractor.NgBy;
-import org.henrrich.jlocator.annotations.FindAll;
-import org.henrrich.jlocator.annotations.FindBy;
-import org.henrrich.jlocator.annotations.FindBys;
+import org.henrrich.jpagefactory.annotations.FindAll;
+import org.henrrich.jpagefactory.annotations.FindBy;
+import org.henrrich.jpagefactory.annotations.FindBys;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ByIdOrName;
 import org.openqa.selenium.support.pagefactory.Annotations;
@@ -15,11 +15,11 @@ import java.lang.reflect.Field;
 /**
  * Created by henrrich on 13/04/2016.
  */
-public class JLocatorAnnotations extends Annotations {
+public class JPageFactoryAnnotations extends Annotations {
 
     private boolean isWebChannel;
 
-    public JLocatorAnnotations(Field field, Channel channel) {
+    public JPageFactoryAnnotations(Field field, Channel channel) {
         super(field);
         this.isWebChannel = Channel.WEB.equals(channel);
     }

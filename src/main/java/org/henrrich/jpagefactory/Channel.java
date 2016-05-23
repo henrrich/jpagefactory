@@ -1,4 +1,4 @@
-package org.henrrich.jlocator;
+package org.henrrich.jpagefactory;
 
 /**
  * Created by henrrich on 13/04/2016.

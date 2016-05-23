@@ -1,6 +1,6 @@
-package org.henrrich.jlocator.annotations;
+package org.henrrich.jpagefactory.annotations;
 
-import org.henrrich.jlocator.How;
+import org.henrrich.jpagefactory.How;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

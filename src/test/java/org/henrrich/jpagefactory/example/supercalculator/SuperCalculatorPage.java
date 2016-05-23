@@ -9,14 +9,15 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by hehuan on 23/05/2016.
+ * Created by henrrich on 23/05/2016.
  */
 public class SuperCalculatorPage {
 
     @FindBy(how = How.MODEL, using = "first")
     private WebElement firstNumber;
 
-    @FindBy(how = How.INPUT, using = "second")
+    // the @FindBy annotation below gives an example of defining different locators for web and mobile channels, a simpler way is to do the same as firstNumber input above
+    @FindBy(howWeb = How.INPUT, usingWeb = "second", howMobile = How.XPATH, usingMobile = "//input[@ng-model='second']")
     private WebElement secondNumber;
 
     @FindBy(how = How.ID, using = "gobutton")

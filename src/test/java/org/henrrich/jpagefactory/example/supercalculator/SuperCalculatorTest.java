@@ -8,9 +8,13 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -21,16 +25,43 @@ public class SuperCalculatorTest {
     private NgWebDriver ngDriver;
     private String baseUrl;
 
+    // change this boolean flag to true to run on chrome emulator
+    private boolean isMobile = false;
+
     private SuperCalculatorPage superCalculatorPage;
 
     @Before
     public void setUp() throws Exception {
-        ngDriver = new NgWebDriver(new FirefoxDriver(), true);
+
+        // change the chrome driver path below to chromedriver_linux32 or chromedriver_linux64 if you are on linux
+        // change the chrome driver path below to chromedriver_mac32 if you are on mac
+        System.setProperty("webdriver.chrome.driver", "C:\\henrrich\\jpagefactory\\src\\test\\resources\\chromedrivers\\chromedriver.exe");
+
+        if (isMobile) {
+            Map<String, String> mobileEmulation = new HashMap<String, String>();
+            mobileEmulation.put("deviceName", "Google Nexus 5");
+            Map<String, Object> chromeOptions = new HashMap<String, Object>();
+            chromeOptions.put("mobileEmulation", mobileEmulation);
+            DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+            capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+
+            // set ignoreSynchronization to true to be able to handle the page sync by ourselves instead of using waitForAngular call in JProtractor
+            ngDriver = new NgWebDriver(new ChromeDriver(capabilities), true);
+        } else {
+            // set ignoreSynchronization to true to be able to handle the page sync by ourselves instead of using waitForAngular call in JProtractor
+            ngDriver = new NgWebDriver(new ChromeDriver(), true);
+        }
+
         baseUrl = "http://juliemr.github.io/protractor-demo/";
-        ngDriver.navigate().to(baseUrl);
+        ngDriver.get(baseUrl);
         ngDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         superCalculatorPage = new SuperCalculatorPage();
-        PageFactory.initElements(new JPageFactoryFieldDecorator(new JPageFactoryElementLocatorFactory(ngDriver, Channel.WEB)), superCalculatorPage);
+
+        Channel channel = Channel.WEB;
+        if (isMobile) {
+            channel = Channel.MOBILE;
+        }
+        PageFactory.initElements(new JPageFactoryFieldDecorator(new JPageFactoryElementLocatorFactory(ngDriver, channel)), superCalculatorPage);
     }
 
     @Test

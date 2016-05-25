@@ -2,6 +2,7 @@ package org.henrrich.jpagefactory.example.supercalculator;
 
 import com.jprotractor.NgWebDriver;
 import org.henrrich.jpagefactory.Channel;
+import org.henrrich.jpagefactory.JPageFactory;
 import org.henrrich.jpagefactory.JPageFactoryElementLocatorFactory;
 import org.henrrich.jpagefactory.JPageFactoryFieldDecorator;
 import org.junit.After;
@@ -61,7 +62,7 @@ public class SuperCalculatorTest {
         if (isMobile) {
             channel = Channel.MOBILE;
         }
-        PageFactory.initElements(new JPageFactoryFieldDecorator(new JPageFactoryElementLocatorFactory(ngDriver, channel)), superCalculatorPage);
+        JPageFactory.initElements(ngDriver, channel, superCalculatorPage);
     }
 
     @Test

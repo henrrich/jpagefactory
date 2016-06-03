@@ -130,7 +130,7 @@ When defining the annotation using `how` and `using` fields, the same locator wi
 
 One can define the annotation in the follow way to use different locators for desktop and mobile channels:
 `@FindBy(howWeb = How.INPUT, usingWeb = "second", howMobile = How.XPATH, usingMobile = "//input[@ng-model='second']")`
-In the above example, JPageFactory will find the input element by its ng-model attribute for desktop channel, and use XPath locator to find the same input element when running on mobile devices.
+In the above example, JPageFactory will find the input element by its `ng-model` attribute for desktop channel, and use XPath locator to find the same input element when running on mobile devices.
 
 When initializing the page object, one must specify the `channel` argument, so that it will use the corresponding locators:
 ```

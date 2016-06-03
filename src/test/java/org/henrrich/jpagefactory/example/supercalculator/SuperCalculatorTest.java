@@ -3,8 +3,6 @@ package org.henrrich.jpagefactory.example.supercalculator;
 import com.jprotractor.NgWebDriver;
 import org.henrrich.jpagefactory.Channel;
 import org.henrrich.jpagefactory.JPageFactory;
-import org.henrrich.jpagefactory.JPageFactoryElementLocatorFactory;
-import org.henrrich.jpagefactory.JPageFactoryFieldDecorator;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -12,7 +10,6 @@ import org.junit.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.PageFactory;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -69,6 +66,12 @@ public class SuperCalculatorTest {
     public void testShouldAddOneAndTwo() throws Exception {
         superCalculatorPage.add("1", "2");
         Assert.assertTrue("Result is not 3!", superCalculatorPage.getLatestResult().equals("3"));
+    }
+
+    @Test
+    public void testShouldTwoTimesThree() throws Exception {
+        superCalculatorPage.times("2", "3");
+        Assert.assertTrue("Result is not 6!", superCalculatorPage.getLatestResult().equals("6"));
     }
 
     @Test

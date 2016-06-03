@@ -2,7 +2,7 @@
 
 ## Summary:
 
-JPageFactory is a set of Selenium Java `FindBy` annotations that eases the usage of Selenium page object pattern for automating Angular based web application. 
+JPageFactory is a set of Selenium Java `FindBy` annotations that eases the usage of Selenium page factory pattern for automating Angular based web application. 
 
 JPageFactory is implemented based on [JProtractor fork from sergueik](https://github.com/sergueik/jProtractor) and provides the following web elements locators as original Selenium `FindBy` annotations:
 * ID
@@ -24,7 +24,7 @@ as well as the following locators from Protractor:
 JPageFactory also supports defining different locators of the same web element for both desktop web and mobile web applications (Angular applications running in mobile browsers).
 
 ## Initializing page object
-Using the following APIs to initializing the page object:
+Using the following page factory APIs to initializing the page object:
 ```
 JPageFactory.initElements(SearchContext searchContext, Channel channel, Object page);
 

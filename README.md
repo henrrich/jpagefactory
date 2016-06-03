@@ -37,7 +37,7 @@ JPageFacotry.initMobileElements(SearchContext searchContext, Object page);
 Here are examples of using locators from Protractor:
 
 **- Find element by Angular binding**  
-_html_: `<h2>{{latest}}</h2>`
+_html_: `<h2>{{latest}}</h2>`  
 _annotation example_: 
 ```
 @FindBy(how = How.BINDING, using = "latest")
@@ -45,7 +45,7 @@ private WebElement latestResult;
 ```
 
 **- Find input element with Angular ng-model**  
-_html_: `<input ng-model="first" type="text" class="input-small"/>`
+_html_: `<input ng-model="first" type="text" class="input-small"/>`  
 _annotation example_: 
 ```
 @FindBy(how = How.INPUT, using = "first")
@@ -53,7 +53,7 @@ private WebElement firstNumber;
 ```  
 
 **- Find element with Angular ng-model**  
-_html_: `<input ng-model="first" type="text" class="input-small"/>`
+_html_: `<input ng-model="first" type="text" class="input-small"/>`  
 _annotation example_: 
 ```
 @FindBy(how = How.MODEL, using = "first")
@@ -84,7 +84,7 @@ private List<WebElement> history;
 ```
 
 **- Find element with button text**  
-_html_: `<button ng-click="doAddition()" id="gobutton" class="btn">Go!</button>`
+_html_: `<button ng-click="doAddition()" id="gobutton" class="btn">Go!</button>`  
 _annotation example_: 
 ```
 @FindBy(how = How.BUTTON_TEXT, using = "Go!")
@@ -92,7 +92,7 @@ private WebElement goButton;
 ```
 
 **- Find element with partial button text**  
-_html_: `<button ng-click="doAddition()" id="gobutton" class="btn">Go!</button>`
+_html_: `<button ng-click="doAddition()" id="gobutton" class="btn">Go!</button>`  
 _annotation example_: 
 ```
 @FindBy(how = How.PARTIAL_BUTTON_TEXT, using = "Go")

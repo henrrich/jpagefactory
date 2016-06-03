@@ -21,7 +21,7 @@ as well as the following locators from Protractor:
 * Button Text / Partial Button Text
 * Options / Selected Options / Repeater Selected Options
 
-JPageFactory also supports defining different locators of the same web element for both desktop web and mobile applications.
+JPageFactory also supports defining different locators of the same web element for both desktop web and mobile web applications (Angular applications running in mobile browsers).
 
 ## Initializing page object
 Using the following APIs to initializing the page object:
@@ -128,8 +128,8 @@ private WebElement selectedOption;
 JPageFactory annotations work for both desktop and mobile web applications.
 When defining the annotation using `how` and `using` fields, the same locator will be used for both channels.  
 
-One can define the annotation in the follow way to use different locators for desktop and mobile channels:
-`@FindBy(howWeb = How.INPUT, usingWeb = "second", howMobile = How.XPATH, usingMobile = "//input[@ng-model='second']")`
+One can define the annotation in the follow way to use different locators for desktop and mobile channels:  
+`@FindBy(howWeb = How.INPUT, usingWeb = "second", howMobile = How.XPATH, usingMobile = "//input[@ng-model='second']")`  
 In the above example, JPageFactory will find the input element by its `ng-model` attribute for desktop channel, and use XPath locator to find the same input element when running on mobile devices.
 
 When initializing the page object, one must specify the `channel` argument, so that it will use the corresponding locators:
@@ -141,7 +141,7 @@ if (isMobile) {
 JPageFactory.initElements(ngDriver, channel, superCalculatorPage);
 ```
 
-If one element only appears on certain channel, the `howXXX` and `usingXXX` field for that channel can be skipped when defining the annotation.
+If one element only appears on certain channel, the `howXXX` and `usingXXX` fields for that channel can be skipped when defining the annotation.
 
 ## Code example
 

@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Created by henrrich on 13/04/2016.
+ * Similar to selenium original <code>@FindBys</code> annotation. It contains one or more JPageFactory <code>@FindBy</code> annotations.
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.TYPE})

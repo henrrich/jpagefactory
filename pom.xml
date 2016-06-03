@@ -6,7 +6,33 @@
 
     <groupId>org.henrrich</groupId>
     <artifactId>jpagefactory</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.1</version>
+    <packaging>jar</packaging>
+
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>JPageFactory is a set of Selenium Java FindBy annotations that eases the usage of Selenium page factory pattern for automating Angular based web application.</description>
+    <url>https://github.com/henrrich/jpagefactory</url>
+
+    <scm>
+        <connection>scm:git:git@github.com:henrrich/jpagefactory.git</connection>
+        <developerConnection>scm:git:git@github.com:henrrich/jpagefactory.git</developerConnection>
+        <url>git@github.com:henrrich/jpagefactory.git</url>
+    </scm>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>He Huang</name>
+            <email>huanghe389@gmail.com</email>
+            <organization>org.henrrich</organization>
+            <organizationUrl>https://github.com/henrrich</organizationUrl>
+        </developer>
+    </developers>
 
     <properties>
         <selenium.server.version>2.53.0</selenium.server.version>
@@ -45,6 +71,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
 
 </project>

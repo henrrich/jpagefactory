@@ -1,8 +1,16 @@
 package org.henrrich.jpagefactory;
 
 /**
- * Created by henrrich on 13/04/2016.
+ * Target test channel, desktop web application or mobile web application.
  */
 public enum Channel {
-    WEB, MOBILE
+    /**
+     * Desktop web application
+     */
+    WEB,
+
+    /**
+     * Mobile web application
+     */
+    MOBILE
 }

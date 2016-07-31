@@ -48,7 +48,7 @@ public class NgQualityShepherdTest {
 		System
 				.setProperty(
 						"webdriver.chrome.driver",
-						"C:\\henrrich\\jpagefactory\\src\\test\\resources\\chromedrivers\\chromedriver.exe");
+						"C:\\java\\selenium\\chromedriver.exe");
 
 		if (isMobile) {
 			Map<String, String> mobileEmulation = new HashMap<String, String>();
@@ -63,15 +63,9 @@ public class NgQualityShepherdTest {
 			ngDriver = new NgWebDriver(new ChromeDriver(capabilities), true);
 		} else {
 
-			DesiredCapabilities capabilities = new DesiredCapabilities("firefox", "",
-					Platform.ANY);
-			FirefoxProfile profile = new ProfilesIni().getProfile("default");
-			profile.setEnableNativeEvents(false);
-			capabilities.setCapability("firefox_profile", profile);
-			seleniumDriver = new FirefoxDriver(capabilities);
-			ngDriver = new NgWebDriver(seleniumDriver, true);
-
-			// ngDriver = new NgWebDriver(new ChromeDriver(), true);
+			// set ignoreSynchronization to true to be able to handle the page sync by
+			// ourselves instead of using waitForAngular call in JProtractor
+			ngDriver = new NgWebDriver(new ChromeDriver(), true);
 
 		}
 

@@ -1,12 +1,16 @@
-package org.henrrich.jpagefactory.example.supercalculator;
+package org.henrrich.jpagefactory.example.NgQualityShepherd;
 
 import com.jprotractor.NgWebDriver;
+
 import org.henrrich.jpagefactory.Channel;
 import org.henrrich.jpagefactory.JPageFactory;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.Ignore;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -21,9 +25,9 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by henrrich on 23/05/2016.
+ * Created by sergueik on 31/07/2016.
  */
-public class SuperCalculatorTest {
+public class NgQualityShepherdTest {
 
 	private NgWebDriver ngDriver;
 	private static WebDriver seleniumDriver;
@@ -32,7 +36,7 @@ public class SuperCalculatorTest {
 	// change this boolean flag to true to run on chrome emulator
 	private boolean isMobile = false;
 
-	private SuperCalculatorPage superCalculatorPage;
+	private NgQualityShepherdPage NgQualityShepherdPage;
 
 	@Before
 	public void setUp() throws Exception {
@@ -71,45 +75,38 @@ public class SuperCalculatorTest {
 
 		}
 
-		baseUrl = "http://juliemr.github.io/protractor-demo/";
+		baseUrl = "http://qualityshepherd.com/angular/friends/";
 		ngDriver.get(baseUrl);
 		ngDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		superCalculatorPage = new SuperCalculatorPage();
+		NgQualityShepherdPage = new NgQualityShepherdPage();
 
 		Channel channel = Channel.WEB;
 		if (isMobile) {
 			channel = Channel.MOBILE;
 		}
-		JPageFactory.initElements(ngDriver, channel, superCalculatorPage);
+		JPageFactory.initElements(ngDriver, channel, NgQualityShepherdPage);
 	}
+
+  @Ignore
+	@Test
+	public void testShouldSearchFriend() throws Exception {
+		Assert.assertTrue("Number of friends is not 3!",
+				NgQualityShepherdPage.getNumberOfFriendNames() == 3);
+	}
+
+//	@Test
+//	public void testShouldHaveFriendNamedJohn() throws Exception {
+//		Assert.assertTrue("Unexpected name of the friend!", NgQualityShepherdPage
+//				.getFriendName(0).equals("John"));
+//
+//	}
 
 	@Test
-	public void testShouldAddOneAndTwo() throws Exception {
-		superCalculatorPage.add("1", "2");
-		Assert.assertTrue("Result is not 3!", superCalculatorPage.getLatestResult()
-				.equals("3"));
-	}
-
-	@Test
-	public void testShouldTwoTimesThree() throws Exception {
-		superCalculatorPage.times("2", "3");
-		Assert.assertTrue("Result is not 6!", superCalculatorPage.getLatestResult()
-				.equals("6"));
-	}
-
-	@Test
-	public void testShouldHaveAHistory() throws Exception {
-		superCalculatorPage.add("1", "2");
-		superCalculatorPage.add("3", "4");
-		Assert.assertTrue("Should have 2 history!",
-				superCalculatorPage.getNumberOfHistoryEntries() == 2);
-
-		superCalculatorPage.add("5", "6");
-		Assert.assertTrue("Should have 2 history!",
-				superCalculatorPage.getNumberOfHistoryEntries() == 3);
+	public void testShouldHaveFriendNamedJohn() throws Exception {
+		Assert.assertTrue("Unexpected name of the friend!", NgQualityShepherdPage
+				.getFriendName().equals("John"));
 
 	}
-
 	@After
 	public void tearDown() throws Exception {
 		ngDriver.quit();

@@ -32,11 +32,18 @@
             <organization>org.henrrich</organization>
             <organizationUrl>https://github.com/henrrich</organizationUrl>
         </developer>
+        <developer>
+            <name>Serguei Kouzmine</name>
+            <email>kouzmine_serguei@yahoo.com</email>
+            <organization></organization>
+            <organizationUrl>https://github.com/sergueik</organizationUrl>
+        </developer>
     </developers>
 
     <properties>
         <selenium.server.version>2.53.0</selenium.server.version>
-        <jprotractor.version>1.0.1</jprotractor.version>
+        <selenium-firefox-driver.version>2.52.0</selenium-firefox-driver.version>
+        <jprotractor.version>1.1-SNAPSHOT</jprotractor.version>
     </properties>
 
     <dependencies>
@@ -57,6 +64,11 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-support</artifactId>
             <version>${selenium.server.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-firefox-driver</artifactId>
+            <version>${selenium-firefox-driver.version}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
